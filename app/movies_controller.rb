@@ -20,8 +20,7 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = Movie.new(attributes)
-  movie.save
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block(args = __)
@@ -43,11 +42,11 @@ def can_get_the_last_item_in_the_database
 end
 
 def can_get_size_of_the_database
-  __
+  Movie.all.size 
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  Movie.find(1)
 end
 
 def can_find_by_multiple_attributes
@@ -55,7 +54,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+  
 end
 
 def can_find_using_where_clause_and_be_sorted
